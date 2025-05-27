@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+  --background: 210 11% 98%; /* #F5F7FA */
+  --foreground: 210 11% 15%; /* #222831 */
+  --muted: 210 11% 95%; /* #EEEFF4 */
+  --muted-foreground: 210 6% 50%; /* #6B7280 */
+  --popover: 210 11% 98%; /* #F5F7FA */
+  --popover-foreground: 210 11% 15%; /* #222831 */
+  --card: 210 11% 98%; /* #F5F7FA */
+  --card-foreground: 210 11% 15%; /* #222831 */
+  --border: 210 11% 90%; /* #D1D5DB */
+  --input: 210 11% 90%; /* #D1D5DB */
+  --primary: 207 90% 54%; /* #007AFF */
+  --primary-foreground: 210 11% 98%; /* #F5F7FA */
+  --secondary: 210 11% 95%; /* #EEEFF4 */
+  --secondary-foreground: 210 11% 15%; /* #222831 */
+  --accent: 210 11% 95%; /* #EEEFF4 */
+  --accent-foreground: 210 11% 15%; /* #222831 */
+  --destructive: 0 84% 60%; /* #FF3B30 */
+  --destructive-foreground: 210 11% 98%; /* #F5F7FA */
+  --ring: 207 90% 54%; /* #007AFF */
+  --radius: 0.75rem;
+
+  /* iOS-specific colors */
+  --ios-bg: 0 0% 10%; /* #1A1A1A */
+  --ios-card: 0 0% 16%; /* #2A2A2A */
+  --ios-blue: 207 100% 50%; /* #007AFF */
+  --ios-gray: 240 6% 58%; /* #8E8E93 */
+  --ios-green: 142 76% 48%; /* #34C759 */
+  --ios-orange: 25 100% 50%; /* #FF9500 */
+  --ios-red: 4 100% 59%; /* #FF3B30 */
+}
+
+.dark {
+  --background: 0 0% 10%; /* #1A1A1A */
+  --foreground: 0 0% 98%; /* #FAFAFA */
+  --muted: 0 0% 16%; /* #2A2A2A */
+  --muted-foreground: 240 6% 58%; /* #8E8E93 */
+  --popover: 0 0% 16%; /* #2A2A2A */
+  --popover-foreground: 0 0% 98%; /* #FAFAFA */
+  --card: 0 0% 16%; /* #2A2A2A */
+  --card-foreground: 0 0% 98%; /* #FAFAFA */
+  --border: 0 0% 26%; /* #424242 */
+  --input: 0 0% 26%; /* #424242 */
+  --primary: 207 100% 50%; /* #007AFF */
+  --primary-foreground: 0 0% 98%; /* #FAFAFA */
+  --secondary: 0 0% 16%; /* #2A2A2A */
+  --secondary-foreground: 0 0% 98%; /* #FAFAFA */
+  --accent: 0 0% 16%; /* #2A2A2A */
+  --accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --destructive: 4 100% 59%; /* #FF3B30 */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 207 100% 50%; /* #007AFF */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply font-sans antialiased bg-ios-bg text-white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overscroll-behavior: none;
+  }
+}
+
+@layer components {
+  .font-sf {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  }
+
+  .safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pb-safe {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  .vote-progress {
+    transition: width 0.3s ease-in-out;
+  }
+
+  .floating-button {
+    box-shadow: 0 8px 32px rgba(0, 122, 255, 0.3);
+  }
+
+  .card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-hover:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+
+  .modal-backdrop {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .shadow-ios {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-ios-lg {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@layer utilities {
+  .bg-ios-bg {
+    background-color: hsl(var(--ios-bg));
+  }
+
+  .bg-ios-card {
+    background-color: hsl(var(--ios-card));
+  }
+
+  .bg-ios-blue {
+    background-color: hsl(var(--ios-blue));
+  }
+
+  .text-ios-blue {
+    color: hsl(var(--ios-blue));
+  }
+
+  .text-ios-gray {
+    color: hsl(var(--ios-gray));
+  }
+
+  .text-ios-green {
+    color: hsl(var(--ios-green));
+  }
+
+  .text-ios-orange {
+    color: hsl(var(--ios-orange));
+  }
+
+  .text-ios-red {
+    color: hsl(var(--ios-red));
+  }
+
+  .bg-ios-green {
+    background-color: hsl(var(--ios-green));
+  }
+
+  .bg-ios-orange {
+    background-color: hsl(var(--ios-orange));
+  }
+
+  .bg-ios-red {
+    background-color: hsl(var(--ios-red));
+  }
+
+  .border-ios-blue {
+    border-color: hsl(var(--ios-blue));
+  }
+
+  .border-ios-gray {
+    border-color: hsl(var(--ios-gray));
+  }
+}
